@@ -1,0 +1,441 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --background-color: #fffefe;
+    --background-color-2: #f1f1f1a2;
+    --color: rgb(83, 247, 83);
+    --gradient-colors: linear-gradient(90deg, #fc6767, #ff9966, #ff5f6d, #ffc371);
+    --GRANADEF:url(fonts/granada-serial-regular_ZNWcz/Granada-Serial Regular/Granada-Serial Regular.ttf);
+    --ROOMF:url(fonts/Room-Thin/Room-Thin.ttf);
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+/* Navigation Bar */
+header {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.9);
+    width: 100%;
+    background-color: var(--background-color);
+    /* border-bottom: 3px solid black; */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px ;  
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    /* Cover full width */
+    font-size: 24px;
+  
+}
+
+
+
+nav a {
+    font:var(--ROOMF);
+    text-decoration: none;
+    color: #333;
+    /* padding: 8px 16px; */
+}
+nav a, .cta-button, .footer-nav a {
+    transition: all 0.3s ease-in-out;
+}
+nav a:hover {
+    background: linear-gradient(90deg, #fc6767, #ff9966, #ff5f6d, #ffc371);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+   background-clip: none;
+    font-size: 34px;
+}
+
+nav img {
+    width: 145px;
+}
+/* Service Section */
+.service-section {
+    padding: 25px;
+    /* border-radius: 180px; */
+    background-color: var(--background-color-2);
+    border-bottom: 15px solid;
+    border-image: var(--gradient-colors)1;
+}
+
+/* H1 Animation */
+/* Base H1 styling */
+.service-section h1 {
+    font-size: 2.5rem; /* Base font size */
+    font: var(--ROOMF);
+    font-weight: 700;
+    text-align: center;
+    padding: 15px;
+    margin: 20px 0;
+    color: #333; /* Soft vibrant color */
+    border: 2px solid black; /* Lighter border */
+    border-radius: 8px; /* Rounded corners */
+    
+    animation: fadeInScale 6s ease-in-out infinite; /* Smooth animation */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+/* Subtle animation for text */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+/* Adding additional animations for multiple texts */
+.service-section h1:nth-child(1) {
+    animation-delay: 0s;
+    border: 4px dotted black;
+}
+
+.service-section h1:nth-child(3) {
+    animation-delay: 6s; /* Delayed by the length of the first h1 animation */
+}
+
+.service-section h1 a{
+    text-decoration: none;
+    color: var(--color);
+}
+.cta-scroll {
+    text-decoration: none;
+    color: var(--color);
+    cursor: pointer;
+}
+.service-section h1:hover{
+    background-color: var(--background-color);
+    border: 8px double black;
+    animation: none;
+}
+
+
+
+
+/* H2 and P styles remain the same */
+.service-section h2 {
+    padding: 16px;
+    font: var(--ROOMF);
+    font-weight: 700;
+    text-align: center;
+    font-size: 2rem;
+    background: var(--gradient-colors);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.service-section p {
+    font: var(--GRANADEF);
+    font-weight: 400;
+    padding: 10px;
+    text-align: justify;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* caraouselll */
+.scroll-container {
+    background-color: var(--background-color);
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 34px  ;
+    scroll-behavior: auto;
+    border-bottom: 15px solid;
+    border-image: var(--gradient-colors)1;
+}
+
+.image-item {
+    display: inline-block;
+    position: relative;
+    margin: 10px ;
+}
+
+.image-item img {
+    width: 400px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+}
+
+.image-item:hover img {
+    transform: scale(1.1);
+}
+
+.caption {
+    font-size: 24px;
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-item:hover .caption {
+    opacity: 1;
+}
+
+
+/* Pricing Section */
+.pricing-gallery {
+    background-color: var(--background-color-2);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Spacing between items */
+    padding: 24px;
+   border-bottom: 15px solid;
+   border-image: var(--gradient-colors)1;
+}
+
+.pricing-item {
+    text-align: center;
+    width: 220px; /* Slightly wider for better layout */
+    background-color: white; /* Background color for each item */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9); /* Subtle shadow for depth */
+    overflow: hidden; /* Ensures rounded corners are applied */
+    transition: transform 0.5s ease; /* Transition effect on hover */
+}
+
+.pricing-item:hover {
+    transform: translateY(-px); /* Lift effect on hover */
+}
+
+.pricing-image {
+    width: 100%;
+    height: 200px; /* Fixed height for uniformity */
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
+    object-fit: cover; /* Ensure images cover the area without distortion */
+}
+
+.pricing-details {
+    padding: 15px; /* Padding for details section */
+    text-align: left; /* Align text to the left for better readability */
+}
+
+.pricing-details p {
+    
+    margin: 5px 0; /* Space between details */
+}
+
+/* Header styles for pricing items */
+h3 {font: var(--ROOMF);
+    font-weight: 700;
+    color: #333; /* Header color */
+    font-size: 1.5rem; /* Increased font size for better visibility */
+    margin: 10px 0; /* Space around headers */
+}
+
+/* Add a subtle background color to the pricing details */
+.pricing-details {
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 0 0 10px 10px; /* Rounded bottom corners */
+}
+/* msg */
+
+.pricing-note {
+    text-align: center;
+    font-size: 1rem;
+    color: #333; /* Text color */
+    margin-top: 20px;
+    /* background-color: #f1f1f1; */
+     /* Subtle background */
+    padding: 10px; /* Padding for space */
+    border-left: 5px solid var(--color); /* Left border for emphasis */
+    border-radius: 5px;
+    font-style: italic;
+}
+@media (max-width: 480px) {
+    .pricing-note {
+        font-size: 0.9rem; /* Slightly smaller font on mobile */
+        padding: 8px; /* Reduce padding for smaller screens */
+    }
+}
+
+/* call us */
+.cta-section {
+    background-color: var(--background-color); /* Match your existing background */
+    color: #333; /* Text color */
+    text-align: center; /* Center text */
+    padding: 40px 20px; /* Padding for spacing */
+    border-bottom: 15px solid;
+    border-image: var(--gradient-colors)1;; /* Optional: border for separation */
+    /* margin-top: 40px; */
+     /* Space from the previous section */
+}
+
+.cta-section h2 {
+    font: var(--ROOMF);
+    font-weight: 700;
+    font-size: 36px; /* Font size for the heading */
+    padding: 14px; /* Space below heading */
+}
+
+.cta-section p {
+    font: var(--GRANADEF);
+    font-weight: 400;
+    font-size: 20px; /* Font size for the paragraph */
+    margin-bottom: 20px;
+     /* Space below paragraph */
+}
+.cta-section h3{
+    padding: 18px;
+}
+.cta-button {
+    font: var(--ROOMF);
+    display: inline-block; /* Make the button inline */
+    padding: 10px 20px;
+     /* Button padding */
+    background-color: var(--color); /* Primary button color */
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 18px; /* Button font size */
+    transition: background-color 0.3s ease; /* Transition effect */
+}
+
+.cta-button:hover {
+    background-color: #45a049; /* Darken button on hover */
+}
+/* Footer Section */
+footer {
+    background-color: var(--background-color-2); /* Dark background for the footer */
+    color: #333;
+    padding: 40px 20px;
+    /* border-top: 4px solid black; */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo img {
+    width: 150px; /* Adjust the size of the logo */
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.footer-nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;font: var(--ROOMF);
+}
+
+.footer-nav a:hover {
+    color: rgb(83, 247, 83);
+}
+
+.social-media a {
+    margin:  10px;
+    
+}
+
+.social-media img {
+    width: 30px; /* Adjust size of social media icons */
+    transition: transform 0.3s ease;
+    margin-top: 15px;
+}
+
+.social-media img:hover {
+    transform: scale(1.2); /* Enlarge on hover */
+}
+
+.footer-contact {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+.footer-contact a {
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    color: rgb(83, 247, 83);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+   
+    .service-section h1 {
+        font-size: 2rem; /* Smaller font size for tablets and small screens */
+        padding: 10px; /* Adjust padding */
+    }
+   
+    .footer-container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .footer-nav ul {
+        flex-direction: row;
+        align-items: center;
+    }
+
+}
+
+@media (max-width: 480px) {
+    
+    nav ul {
+
+        font-size: 14px;
+    }
+    
+    nav img {
+        width: 56px;
+    }  nav a:hover{
+        font-size: 28px;
+    }
+
+    .service-section h1 {
+        font-size: 1.5rem; /* Even smaller font size for mobile phones */
+        padding: 8px; /* Adjust padding for mobile */
+    }
+    
+}
