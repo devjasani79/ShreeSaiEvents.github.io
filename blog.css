@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --background-color: #fffefe;
+    --background-color-2: #f1f1f1a2;
+    --color: rgb(83, 247, 83);
+    --gradient-colors: linear-gradient(90deg, #fc6767, #ff9966, #ff5f6d, #ffc371);
+    --GRANADEF:url(fonts/granada-serial-regular_ZNWcz/Granada-Serial Regular/Granada-Serial Regular.ttf);
+    --ROOMF:url(fonts/Room-Thin/Room-Thin.ttf);
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+/* Navigation Bar */
+header {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.9);
+    width: 100%;
+    background-color: var(--background-color);
+    /* border-bottom: 3px solid black; */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px ;  
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    /* Cover full width */
+    font-size: 24px;
+  
+}
+
+
+
+nav a {
+    font:var(--ROOMF);
+    text-decoration: none;
+    color: #333;
+    /* padding: 8px 16px; */
+}
+nav a, .cta-button, .footer-nav a {
+    transition: all 0.3s ease-in-out;
+}
+nav a:hover {
+    background: linear-gradient(90deg, #fc6767, #ff9966, #ff5f6d, #ffc371);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+   background-clip: none;
+    font-size: 34px;
+}
+
+nav img {
+    width: 145px;
+}
+/* blog session */
+.blog-section {
+    background-color: var(--background-color-2);
+    color: #333;
+    text-align: center;
+    padding: 45px 20px;
+    border-bottom: 15px solid;
+    border-image: var(--gradient-colors)1;
+}
+
+.blog-section h1 {
+    font: var(--ROOMF);
+    font-weight: 700;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.blog-item {
+    background-color: var(--background-color); 
+    /* Fallback background */
+    border-radius: 10px;
+    overflow: hidden;
+    /* border: 2px solid black; */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+    transition: transform 0.3s ease;
+}
+
+
+
+.blog-item:hover {
+    transform: scale(1.05);
+}
+
+.blog-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+   
+        background-color: #f9f9f9; /* Fallback for broken images */
+   
+}
+
+.blog-item h3 {
+    font: var(--ROOMF);
+    font-weight: 700;
+    font-size: 24px;
+    margin: 10px 0;
+    color: #333;
+   
+}
+
+.blog-item p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #333;
+  font: var(--GRANADEF);
+  font-weight: 400;
+}
+
+/* call us */
+.cta-section {
+    background-color: var(--background-color); /* Match your existing background */
+    color: #333; /* Text color */
+    text-align: center; /* Center text */
+    padding: 40px 20px; /* Padding for spacing */
+    border-bottom: 15px solid;
+    border-image: var(--gradient-colors)1;; /* Optional: border for separation */
+    /* margin-top: 40px; */
+     /* Space from the previous section */
+}
+
+.cta-section h2 {
+    font: var(--ROOMF);
+    font-weight: 700;
+    font-size: 36px; /* Font size for the heading */
+    padding: 14px; /* Space below heading */
+}
+
+.cta-section p {
+    font: var(--GRANADEF);
+    font-weight: 400;
+    font-size: 20px; /* Font size for the paragraph */
+    margin-bottom: 20px;
+     /* Space below paragraph */
+}
+.cta-section h3{
+    padding: 18px;
+}
+.cta-button {
+    font: var(--ROOMF);
+    display: inline-block; /* Make the button inline */
+    padding: 10px 20px;
+     /* Button padding */
+    background-color: var(--color); /* Primary button color */
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 18px; /* Button font size */
+    transition: background-color 0.3s ease; /* Transition effect */
+}
+
+.cta-button:hover {
+    background-color: #45a049; /* Darken button on hover */
+}
+/* Footer Section */
+footer {
+    background-color: var(--background-color-2); /* Dark background for the footer */
+    color: #333;
+    padding: 40px 20px;
+    /* border-top: 4px solid black; */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo img {
+    width: 150px; /* Adjust the size of the logo */
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.footer-nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;font: var(--ROOMF);
+}
+
+.footer-nav a:hover {
+    color: rgb(83, 247, 83);
+}
+
+.social-media a {
+    margin:  10px;
+    
+}
+
+.social-media img {
+    width: 30px; /* Adjust size of social media icons */
+    transition: transform 0.3s ease;
+    margin-top: 15px;
+}
+
+.social-media img:hover {
+    transform: scale(1.2); /* Enlarge on hover */
+}
+
+.footer-contact {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+.footer-contact a {
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    color: rgb(83, 247, 83);
+}
+
+
+@media (max-width: 480px) {
+    
+    nav ul {
+
+        font-size: 14px;
+    }
+    
+    nav img {
+        width: 56px;
+    }
+
+    nav a:hover{
+        font-size: 28px;
+    }
+
+
+
+    .blog-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+    }
+
+    .blog-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: var(--background-color);
+        padding: 10px;
+        /* border: 1px solid #ccc; */
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+    }
+
+    .blog-item img {
+        width: 100%;  /* Image takes 40% of the width */
+        height: 20vh;
+        border-radius: 8px;
+        margin-right: 10px;
+    }
+
+    .blog-item div {
+        width: 55%;
+         /* Text takes 55% of the width */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .blog-item h3 {
+        font-size: 18px; /* Adjust heading size for mobile */
+        margin: 0 0 5px;
+    }
+
+    .blog-item p {
+        font-size: 14px; /* Adjust paragraph size */
+        margin: 0;
+        line-height: 1.5;
+    }
+}
